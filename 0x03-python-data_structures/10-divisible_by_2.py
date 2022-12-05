@@ -1,5 +1,11 @@
 #!/usr/bin/python3
 def divisible_by_2(my_list=[]):
-    """finds all multioles of 2 in a list"""
+    """finds all multiples of 2 in a list"""
     if my_list:
-        return [(i % 2 == 0) for i in my_list]
+        values = []
+        for i in my_list:
+            if i % 2 is 0:
+                values.append(True)
+            else:
+                values.append(False)
+        return values
