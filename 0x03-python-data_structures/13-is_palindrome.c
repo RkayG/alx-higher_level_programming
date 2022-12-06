@@ -10,9 +10,22 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *current = *head;
 	int *arrayNum;
-	int i = 0, j = 0, m, bufsize = 1024;
+	int i = 0, j = 0, m, size = 0;
 
-	arrayNum = malloc(sizeof(int) * bufsize);
+	if (head == NULL) /* list doesn't exist */
+		return (0);
+	if (*head == NULL)/* if empty list, then it's a palindrome */
+		return (1);
+
+	while (current != NULL)
+	{
+		current = current->next;
+		size++;
+	}
+	if (size == 1)
+		return (1);
+
+	arrayNum = malloc(sizeof(int) * size);
 	if (!arrayNum)
 		exit(98);
 
@@ -35,4 +48,3 @@ int is_palindrome(listint_t **head)
 	free(arrayNum);
 	return (1);
 }
-
