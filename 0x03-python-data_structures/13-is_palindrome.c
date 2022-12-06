@@ -9,8 +9,17 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *current = *head;
-	int arrayNum[100];
-	int i = 0, j = 0, m;
+	int *arrayNum;
+	int i = 0, j = 0, k = 0, m;
+
+	while (current != NULL)
+	{
+		current = current->next;
+		k++;
+	}
+	arrayNum = malloc(sizeof(int) * k);
+	if (!arrayNum)
+		exit(98);
 
 	while (current != NULL)
 	{
@@ -28,6 +37,7 @@ int is_palindrome(listint_t **head)
 			return (0);
 		i--;
 	}
+	free(arrayNum);
 	return (1);
 }
 
