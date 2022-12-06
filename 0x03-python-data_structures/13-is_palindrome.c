@@ -9,7 +9,7 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *current = *head;
-	int *arrayNum;
+	int arrayNum[10240];
 	int i = 0, j = 0, m, size = 0;
 
 	if (head == NULL) /* list doesn't exist */
@@ -24,10 +24,6 @@ int is_palindrome(listint_t **head)
 	}
 	if (size == 1)
 		return (1);
-
-	arrayNum = malloc(sizeof(int) * size);
-	if (!arrayNum)
-		exit(98);
 
 	while (current != NULL)
 	{
@@ -45,6 +41,5 @@ int is_palindrome(listint_t **head)
 			return (0);
 		i--;
 	}
-	free(arrayNum);
 	return (1);
 }
