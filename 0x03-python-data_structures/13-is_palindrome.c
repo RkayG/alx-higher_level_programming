@@ -10,14 +10,9 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *current = *head;
 	int *arrayNum;
-	int i = 0, j = 0, k = 0, m;
+	int i = 0, j = 0, m, bufsize = 1024;
 
-	while (current != NULL)
-	{
-		current = current->next;
-		k++;
-	}
-	arrayNum = malloc(sizeof(int) * k);
+	arrayNum = malloc(sizeof(int) * bufsize);
 	if (!arrayNum)
 		exit(98);
 
