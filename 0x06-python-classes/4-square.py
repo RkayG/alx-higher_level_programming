@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module 3-square
+Module 4-square
 Defines class Square with private
 attribute size
 """
@@ -20,12 +20,28 @@ class Square:
         Attributes:
             size(int): size of a side of square
         """
-        if type(size) is not int:
+        self.size = size
+
+    @property
+    def size(self):
+        """
+        Getter
+
+        retrieves private atrribute 'size'
+        """
+        return self.__size
+
+    @size.setter
+    def size(self, value):
+        """
+        sets value of private attribute 'size'
+        """
+        if type(value) is not int:
             raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size musr be >= 0")
+        elif value < 0:
+            raise ValueError("size must be >= 0")
         else:
-            self.__size = size
+            self.__size = value
 
     def area(self):
         """
