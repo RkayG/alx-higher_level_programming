@@ -12,6 +12,9 @@ class Square:
         Functions:
             __init__(self, size)
             area(self)
+            size(self, value)
+            area(self)
+            print(self)
     """
 
     def __init__(self, size=0):
